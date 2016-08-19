@@ -1,0 +1,107 @@
+<include file="Public/header"/>
+<body>
+  <!---->
+  <section class="container">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">网站资讯</h3>
+      </div>
+      <div class="panel-body">
+        <div class="navbar navbar-default">
+          <div class="row navbar-form">
+            <button type="submit" onclick="location.href='__MODULE__/ad/addArticle'" class="btn btn-primary pull-right">
+              <i class="icon-plus"></i>增加资讯
+            </button>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <th class="text-center">ID</th>
+                <th class="text-center">名称</th>
+                <th class="text-center">内容</th>
+                <th class="text-center">关键词</th>
+                <th class="text-center">是否启用</th>
+                 <th class="text-center">添加时间</th>
+                <th class="text-center">操作</th>
+
+              </tr>
+            </thead>
+            <tbody>
+            <volist name="articleList" id="vo">
+              <tr>
+                <td class="text-center">{$i}</td>
+                <td class="text-center">{$vo.article_name}</td>
+                <td class="text-center">{$vo.content}</td>
+                <td class="text-center">{$vo.keywords}</td>
+                <td class="text-center"><a href="javascript:void(0)" onclick="change(this)">
+                  <if condition="$vo[is_open] eq 1">
+                  <img src="__PUBLIC__/images/yes.png" data-val="{$vo.is_open}" data-id="{$vo.article_id}">
+                  <else/>
+                      <img src="__PUBLIC__/images/cancel.png" data-val="{$vo.is_open}" data-id="{$vo.article_id}">
+                  </if>
+                </a></td>
+                <td class="text-center">{$vo.add_time}</td>
+                <td class="text-center">
+                  <a href="__MODULE__/ad/editArticle/article_id/{$vo.article_id}" class="btn btn-primary" data-original-title="编辑">
+                    <i class="icon-pencil"></i>
+                  </a>
+                  <a href="#" class="btn btn-danger" data-original-title="删除" onclick="delfun(this)" data-id="{$vo.article_id}">
+                    <i class="icon-trash"></i>
+                  </a>
+                </td>
+              </tr>
+            </volist>
+            </tbody>
+          </table>
+        </div>
+      </div>    
+    </div>
+  </section> 
+</body>
+<script>
+    function change(obj){
+      var val = $(obj).children(":first").data("val");
+      var $article_id = $(obj).children(":first").data("id");
+//      console.log(val);
+//      console.log($article_id);
+      $.ajax({
+        url:"/index.php/admin/ad/changeArticleStatus",
+        data:{"article_id":$article_id,"is_open":val},
+        dataType:"json",
+        success:function(msg){
+          //console.log(msg.status);
+          if(msg.status == 1){
+            $(obj).children(":first").attr('src',"__PUBLIC__/images/yes.png");
+            $(obj).children(":first").data("val",1);
+          }else if(msg.status == 0){
+            $(obj).children(":first").attr('src',"__PUBLIC__/images/cancel.png");
+            $(obj).children(":first").data("val",0);
+          }
+        },
+        error:function(){
+          alert("出错了");
+        }
+      });
+    }
+    function delfun(obj){
+      if(confirm('确认删除')){
+        $.ajax({
+          type : 'get',
+          url : '/index.php/admin/ad/delArticle',
+          data : {article_id:$(obj).attr('data-id')},
+          dataType : 'json',
+          success : function(msg){
+            if(msg.code ==1){
+              $(obj).parent().parent().remove();
+            }else{
+              layer.alert(data, {icon: 2});   //alert('用户名或密码不能为空');// alert(data);
+            }
+          }
+        })
+      }
+      return false;
+    }
+</script>
+</html>

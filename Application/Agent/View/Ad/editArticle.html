@@ -1,0 +1,64 @@
+<include file="Public/header"/>
+<body>
+<!---->
+<section class="container">
+    <div class="pull-right">
+        <a href="__MODULE__/ad/article" data-toggle="tooltip" title="" class="btn btn-default" data-original-title="返回"> <i class="icon-reply"></i>
+        </a>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">修改咨询</h3>
+        </div>
+        <div class="panel-body">
+            <!--表单数据-->
+            <form method="post" action="__MODULE__/ad/editArticle">
+                <!--通用信息-->
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <tbody>
+                        <tr>
+                            <td>名称：</td>
+                            <td>
+                                <input type="text" name="article_name" class="form-control" value="{$vo.article_name}">
+                                <input type="hidden" name="article_id" class="form-control" value="{$vo.article_id}">
+                                <span id="err_attr_name" style="color:#F00; display:none;"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>内容：</td>
+                            <td>
+                                <textarea class="form-control" name="content" >{$vo.content}</textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>关键字：</td>
+                            <td>
+                                <input type="text" name="keywords"  class="form-control" value="{$vo.keywords}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>是否开启：</td>
+                            <td>
+                                <input type="radio" name="is_open" value="1" <if condition="$vo.is_open eq 1">checked = "checked"</if> >是
+                                <input type="radio" name="is_open" value="0" <if condition="$vo.is_open eq 0">checked = "checked"</if>>否
+                            </td>
+                        </tr>
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input class="btn btn-primary" type="submit" value="提交">
+                            </td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </form>
+            <!--表单数据-->
+        </div>
+    </div>
+</section>
+</body>
+</html>

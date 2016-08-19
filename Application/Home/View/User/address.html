@@ -1,0 +1,52 @@
+<!--header-->
+<include file="Public/header" title="个人中心" css="__PUBLIC__/css/personal.css"/>
+<!--个人中心-->
+<div class="personal">
+	<div class="w90">
+		<div class="container-fluid">
+		    <div class="row">
+		        <include file="Public/slideMenu"/>
+		        <div class="col-xs-12 col-sm-9 col-md-10 main">
+		        	<div class="page-header">
+		        		<h2 class="page_title">收货地址</h2>	
+		        	</div>
+		        	<div class="container-fluid">
+		        		<!--收货地址-->
+		        		<div class="row my_adress">
+		        			<div class="col-xs-12 col-sm-4 col-sm-push-8 col-md-3 col-md-push-8 xs_right">
+		        				<a href="{:U('Cart/adress')}"><span class="glyphicon glyphicon-edit"></span>编辑</a>
+		        				<a href=""><span class="glyphicon glyphicon-trash"></span>删除</a>
+		        			</div>
+		        			<div class="col-xs-12 col-sm-8 col-sm-pull-4 col-md-8 col-md-pull-3">
+		        				<div class="col-xs-6">收货人：Tom</div>
+		        				<div class="col-xs-6 text-right">18823450975</div>
+		        				<div class="col-xs-12">地址：广东省广州市天河区XX路XX号</div>
+		        			</div>		        			
+		        		</div>
+		        		<!--收货地址end-->
+		        		<!--收货地址-->
+		        		<div class="row my_adress">
+		        			<div class="col-xs-12 col-sm-4 col-sm-push-8 col-md-3 col-md-push-8 xs_right">
+		        				<a href="{:U('Cart/adress')}"><span class="glyphicon glyphicon-edit"></span>编辑</a>
+		        				<a href=""><span class="glyphicon glyphicon-trash"></span>删除</a>
+		        			</div>
+		        			<div class="col-xs-12 col-sm-8 col-sm-pull-4 col-md-8 col-md-pull-3">
+		        				<div class="col-xs-6">收货人：Tom</div>
+		        				<div class="col-xs-6 text-right">18823450975</div>
+		        				<div class="col-xs-12">地址：广东省广州市天河区XX路XX号</div>
+		        			</div>		        			
+		        		</div>
+		        		<!--收货地址end-->	
+		        		<div class="text-center add_adress">
+		        			<button class="btn btn-warning" onclick="location.href='{:U('Cart/adress')}'"">增加地址</button>
+		        		</div>	        		
+		        	</div>
+		        </div>
+		    </div>
+		</div>
+	</div>	
+</div>
+
+
+<!--footer-->
+<include file="Public/footer"/>

@@ -1,0 +1,262 @@
+<include file="Public/header" title="商品详情" css="__PUBLIC__/css/goods_detail.css"/>
+<include file="Public/nav"/>
+<div class="w90">
+	<div class="container-fluid">
+		<!--当前位置-->
+		<div class="clearfix  current_url">
+			<div class="pull-right">
+				<a href="javascript:history.go(-1)">返回</a>
+			</div>
+			<div>
+				<ol class="breadcrumb">
+					<span class="grey">当前位置:&nbsp;&nbsp;&nbsp;</span>
+					<li>
+						<a href="__MODULE__/index/index/agent_id/{$Think.session.agent_code}">首页</a>
+
+					<volist name="nav" id="vo">
+						<if condition="$i eq count($nav)">
+							<li>
+								<a href="__CONTROLLER__/goods_detail/goods_id/{$vo.id}/agent_id/{$Think.session.agent_code}">{$vo.name}</a>
+							</li>
+						<else/>
+							<li>
+								<a href="__CONTROLLER__/index/cate_id/{$vo.id}/agent_id/{$Think.session.agent_code}">{$vo.name}</a>
+							</li>
+						</if>
+					</volist>
+				</ol>
+			</div>
+		</div>
+		<!--商品简介-->
+		<div class="goods_intro">
+			<div class="row">
+				<div class="col-xs-12 col-sm-5 goods_pic">
+					<div class="tab-content">
+						<volist name="goodsImageList" id="vo">
+							<if condition="$i eq 1">
+								<div class="tab-pane fade in active" id="goods_{$i}">
+									<img src="{$vo.image_url}" class="center-block"></div>
+							<else/>
+								<div class="tab-pane fade" id="goods_{$i}">
+									<img src="{$vo.image_url}" class="center-block"></div>
+							</if>
+						</volist>
+					</div>
+					<ul class="nav nav-tabs">
+						<volist name="goodsImageList" id="vo">
+							<if condition="$i eq 1">
+								<li class="active">
+									<a href="#goods_{$i}" data-toggle="tab">
+									<img src="{$vo.image_url}"></a>
+								</li>
+							<else/>
+							<li class="">
+								<a href="#goods_{$i}" data-toggle="tab">
+									<img src="{$vo.image_url}"></a>
+							</if>
+						</volist>
+					</ul>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-sm-offset-1 goods_pic_right">
+					<div class="row">
+						<div class="col-xs-10 col-xs-offset-1 col-sm-11 col-sm-offset-0">
+							<div class="goods_title">
+								<h1>{$goods.0.goods_name}</h1>
+								<if condition="$goods[0]['is_new'] eq 1">
+									<span class="red">NEW!</span>
+								</if>
+								<if condition="$goods[0]['is_hot'] eq 1">
+									<span class="red">HOT!</span>
+								</if>
+							</div>
+						</div>
+						<div class="col-xs-11 col-xs-offset-1 col-sm-12  col-sm-offset-0">
+							价格:<span class="discount_price">&yen;{$goods.0.shop_price}</span>
+							<if condition="$goods[0]['shop_price'] elt $goods[0]['market.price']">
+								&nbsp;&nbsp;<span class="original_cost">&yen;{$goods.0.market_price}</span>
+							</if>
+						</div>
+						<div class="col-xs-5 col-xs-offset-1 col-sm-12  col-sm-offset-0">
+							配送：送货上门
+						</div>
+						<div class="col-xs-5 col-xs-offset-1 col-sm-12  col-sm-offset-0">
+							<if condition="$goods[0]['is_free_shipping'] eq 0">
+								运费：免运费
+							<else/>
+								运费：待计算
+							</if>
+						</div>
+						<div class="col-xs-10 col-xs-offset-1 col-sm-12  col-sm-offset-0">
+							<span>数量：</span>
+							<div class="input-group">
+								<span class="input-group-btn">
+									<button class="btn" type="button" onclick="changeNum(this)">-</button>
+								</span>
+								<input type="text" class="form-control text-center" value="{$goods_num}" data-id="{$goods.0.goods_id}" size="3">
+								<span class="input-group-btn">
+									<button class="btn" type="button" onclick="changeNum(this)">+</button>
+								</span>
+							</div>
+						</div>
+						<div class="col-xs-5 col-xs-offset-1  col-sm-7 col-sm-offset-0">
+							<button class="btn orange_btn buy_btn" onclick="promptlyBuy(this)" data-id="{$goods.0.goods_id}">立即购买</button>
+						</div>
+						<div class="col-xs-5 col-sm-7">
+							<button class="btn green_btn buy_btn" onclick="addToCart(this)" data-id="{$goods.0.goods_id}" id="test"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;加入购物车</button>
+						</div>
+						<div class="col-xs-11 col-xs-offset-1 col-sm-12 col-sm-offset-0">
+							<a href="#"><img src="__PUBLIC__/images/aliPay.png"></a>
+							<a href="#"><img src="__PUBLIC__/images/wechatPay.png"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--商品详情-->
+		<div class="goods_msg">
+			<ul class="nav nav-tabs">
+			  <li class="active">
+			  	<a href="#details" data-toggle="tab">商品详情</a>
+			  </li>
+			  <li>
+			  	<a href="#comment" data-toggle="tab">商品评价</a>
+			  </li>
+			</ul>
+			<div class="tab-content">
+				<div class="tab-pane fade in active" id="details">
+					{$goods.0.goods_content|htmlspecialchars_decode}
+					<!--<img src="__PUBLIC__/images/goods_details.png">-->
+				</div>
+				<div class="tab-pane fade" id="comment">
+					<div class="comment_list">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-xs-12 col-sm-9">
+									<span>到货速度很快，分量很足味道还可以，我标注了要日期新鲜的，果真收到货很新鲜赞一个</span>
+								</div>
+								<div class="col-xs-6 col-sm-2 col-sm-offset-1">v***e（匿名）</div>
+								<div class="col-xs-6 comment_date">2016.07.13</div>
+							</div>
+						</div>
+					</div>
+					<div class="comment_list">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-xs-12 col-sm-9">
+									<span>坚果味道很不错哦，颗粒很大，打开没有闻到油腻味，果实表面干爽，咬下去香香脆脆的，有果仁的自然清甜味道，表皮只有盐味，没有其它乱七八糟的调料味，感觉比较健康，个人感觉杏仁果最香，但也是附着盐最多的，有一点咸，其他的恰到好处。</span>
+								</div>
+								<div class="col-xs-6 col-sm-2 col-sm-offset-1">v***e（匿名）</div>
+								<div class="col-xs-6 comment_date">2016.07.13</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	function changeNum(obj){
+		var operator = $(obj).html();
+		if(operator == '-'){
+			var goods_id = $(obj).parent().next().data('id');
+			var goods_num = $(obj).parent().next().val();
+			var goods_num = goods_num-1;
+			if(goods_num <= 1 ){
+				goods_num = 1;
+				$(obj).parent().next().val(goods_num);
+			}else{
+				$(obj).parent().next().val(goods_num);
+			}
+//			$.ajax({
+//				url:"__MODULE__/cart/changeGoodsNum/agent_id/{$Think.session.agent_code}",
+//				type:'post',
+//				dataType:'json',
+//				data:{'goods_id':goods_id,'operator':operator},
+//				success:function(msg){
+//					var goods_num = $(obj).parent().next().val();
+//					console.log(goods_num);
+//					console.log(msg);
+//					var goods_num = goods_num-1;
+//					console.log(goods_num);
+//					if(goods_num <= 0 ){
+//						goods_num = 0;
+//						$(obj).parent().next().val(goods_num);
+//					}else{
+//						$(obj).parent().next().val(goods_num);
+//					}
+//				},
+//				error:function(){
+//					console.log("出错了");
+//				}
+//			});
+		}else if(operator == '+'){
+			var goods_id = $(obj).parent().prev().data('id');
+			var goods_num = $(obj).parent().prev().val();
+			$(obj).parent().prev().val(parseInt(goods_num)+1);
+			console.log(goods_id);
+//			$.ajax({
+//				url:"__MODULE__/cart/changeGoodsNum/agent_id/{$Think.session.agent_code}",
+//				type:'post',
+//				dataType:'json',
+//				data:{'goods_id':goods_id,'operator':operator},
+//				success:function(msg){
+//					var goods_num = $(obj).parent().prev().val();
+//					console.log(goods_num);
+//					$(obj).parent().prev().val(parseInt(goods_num)+1);
+//				},
+//				error:function(){
+//					console.log("出错了");
+//				}
+//			});
+		}
+	}
+
+	function addToCart(obj){
+		var goods_id = $(obj).data('id');
+		var goods_num = $(obj).parent().prev().prev().children().eq(1).children().eq(1).val();
+		$.ajax({
+			url:"__MODULE__/cart/addToCart/agent_id/{$Think.session.agent_code}/goods_num/"+goods_num,
+			type:"get",
+			dataType:"json",
+			data:{"goods_id":goods_id},
+			success:function(msg){
+				//console.log(msg);
+				if(msg.code == 0){
+					//alert(msg.msg);
+					$("#login").modal('show');
+				}else{
+					alert('加入成功');
+				}
+			},
+			error:function(){
+				alert("网络繁忙。。。");
+			}
+		});
+	}
+
+	function promptlyBuy(obj){
+		var goods_id = $(obj).data('id');
+		var goods_num = $(obj).parent().prev().children().eq(1).children().eq(1).val();
+		//console.log(goods_num);
+		$.ajax({
+			url:'__MODULE__/order/promptlyBuy/agent_id/{$Think.session.agent_code}',
+			type:"get",
+			dataType:"json",
+			data:{'goods_id': goods_id,'goods_num':goods_num},
+			success:function(msg){
+				//console.log(msg);
+				if(msg.code == 0){
+					//alert(msg.msg);
+					$("#login").modal('show');
+				}else{
+					location.href="__MODULE__/order/address/agent_id/{$Think.session.agent_code}";
+				}
+			},
+			error:function(){
+				alert("网络繁忙。。。");
+			}
+		});
+	}
+</script>
+<include file="Public/footer"/>

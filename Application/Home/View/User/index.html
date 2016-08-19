@@ -1,0 +1,84 @@
+<!--header-->
+<include file="Public/header" title="个人中心" css="__PUBLIC__/css/personal.css"/>
+<!--个人中心-->
+<div class="personal">
+	<div class="w90">
+		<div class="container-fluid">
+		    <div class="row">
+		        <include file="Public/slideMenu"/>
+		        <div class="col-xs-12 col-sm-9 col-md-10 main">
+		        	<!--用户信息-->
+		        	<div class="user  text-center">
+		        		<ul class="userbar clearfix">
+		        			<li class="userInfo">
+		        				<a href="#">
+		        					<img src="__PUBLIC__/images/avatar.png" class="img-circle"></a>
+		        				<a href="">Tom</a>
+		        			</li>
+		        			<li>
+		        				<a href="{:U('user/adress')}">我的收货地址</a>
+		        			</li>
+		        			<li>
+		        				<a href="{:U('user/discount')}">我的优惠</a>
+		        			</li>
+		        			<li>
+		        				<a href="{:U('user/collect')}">我的收藏</a>
+		        			</li>
+		        		</ul>
+		        		<ul class="orderInfo clearfix">
+		        			<li>
+		        				<a href="{:U('user/order')}">待付款</a>
+		        			</li>
+		        			<li>
+		        				<a href="{:U('user/order')}">待发货</a>
+		        			</li>
+		        			<li>
+		        				<a href="{:U('personal/order')}">待收货</a>
+		        			</li>
+		        			<li>
+		        				<a href="{:U('user/order')}">待评价</a>
+		        			</li>
+		        			<li>
+		        				<a href="{:U('user/order')}">退款</a>
+		        			</li>
+		        		</ul>
+		        	</div>
+		        	<!--最新订单-->
+		        	<div class="newOrder">
+		        		<div class="clearfix"> <strong>最新订单</strong>
+		        			<a href="{:U('personal/order')}" class="pull-right">查看全部订单</a>
+		        		</div>
+		        		<div class="newOrder_info container-fluid">
+		        			<div class="row text-center">
+		        				<div class="col-xs-12 col-md-11 text-center">
+		        					<div class="col-xs-3 col-md-2 text-left">
+			        					<a href="{:U('Goods/goods_detail')}"><img src="__PUBLIC__/images/goods_1.png" class="img-rounded"></a>
+			        				</div>
+			        				<div class="col-xs-9 col-md-4 text-left">
+			        					<a href="{:U('Goods/goods_detail')}">新生儿婴儿防胀气宽口玻璃奶瓶礼盒套装</a>
+			        				</div>
+			        				<div class="col-xs-3 col-md-2">
+			        					<span>&yen;89</span><span class="grey">x1</span>
+			        				</div>
+			        				<div class="col-xs-3 col-md-2">
+			        					<span>待发货</span>
+			        				</div>
+			        				<div class="col-xs-3 col-md-2">
+			        					<span>总价：&yen;89</span>
+			        				</div>
+		        				</div>
+	        					<div class="col-xs-12 col-md-1 xs_right">
+	        						<a href="{:U('personal/order_info')}">查看</a>
+	        					</div>
+		        			</div>
+		        		</div>
+		        	</div>
+		        </div>
+		    </div>
+		</div>
+	</div>	
+</div>
+
+
+<!--footer-->
+<include file="Public/footer"/>

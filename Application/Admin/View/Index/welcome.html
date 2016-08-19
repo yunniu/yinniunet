@@ -1,0 +1,157 @@
+<include file="Public/min-header" />
+<div class="wrapper">
+    <section class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                    <span class="info-box-icon bg-aqua"><i class="icon-bell-alt"></i></span>
+                    <div class="info-box-content">
+                        <span class="info-box-text">待处理订单</span>
+                        <span class="info-box-number">{$count.handle_order}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                    <span class="info-box-icon bg-green"><i class="icon-flag"></i></span>
+                    <div class="info-box-content">
+                        <span class="info-box-text">商品数量</span>
+                        <span class="info-box-number">{$count.goods}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                    <span class="info-box-icon bg-yellow"><i class="icon-copy"></i></span>
+                    <div class="info-box-content">
+                        <span class="info-box-text">文章数量</span>
+                        <span class="info-box-number">{$count.article}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                    <span class="info-box-icon bg-red"><i class="icon-user"></i></span>
+                    <div class="info-box-content">
+                        <span class="info-box-text">会员总数</span>
+                        <span class="info-box-number">{$count.users}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box info-box">
+                    <div class="box-header">
+                        <h3 class="box-title">今日统计</h3>
+                    </div>
+                    <div class="contaier">
+                        <div class="row">
+                            <div class="col-sm-3 col-xs-6">
+                                新增订单：{$count.new_order}              </div>
+                            <div class="col-sm-3 col-xs-6">
+                                今日访问：{$count.today_login}              </div>
+                            <div class="col-sm-3 col-xs-6">
+                                新增会员：{$count.new_users}              </div>
+                            <div class="col-sm-3 col-xs-6">
+                                最新评论：{$count.comment}              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box  box-primary">
+                    <div class="box-body">
+                        <div class="info-box">
+                            <table class="table table-bordered">
+                                <tbody>
+                                <tr>
+                                    <td>服务器操作系统：</td>
+                                    <td>Linux</td>
+                                    <td>服务器域名/IP：</td>
+                                    <td>demo2.tp-shop.cn [ 183.134.101.194 ]</td>
+                                    <td>服务器环境：</td>
+                                    <td>Apache/2.4.12 (Unix) OpenSSL/1.0.1m PHP/5.6.8 mod_perl/2.0.8-dev Perl/v5.16.3</td>
+                                </tr>
+                                <tr>
+                                    <td>PHP 版本：</td>
+                                    <td>5.6.8</td>
+                                    <td>Mysql 版本：</td>
+                                    <td></td>
+                                    <td>GD 版本</td>
+                                    <td>bundled (2.1.0 compatible)</td>
+                                </tr>
+                                <tr>
+                                    <td>文件上传限制：</td>
+                                    <td>128M</td>
+                                    <td>最大占用内存：</td>
+                                    <td>512M</td>
+                                    <td>最大执行时间：</td>
+                                    <td>30s</td>
+                                </tr>
+                                <tr>
+                                    <td>安全模式：</td>
+                                    <td>NO</td>
+                                    <td>Zlib支持：</td>
+                                    <td>YES</td>
+                                    <td>Curl支持：</td>
+                                    <td>YES</td>
+                                </tr>
+                                </tbody></table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box  box-success">
+                    <div class="box-body">
+                        <div class="info-box">
+                            <table class="table table-bordered">
+                                <tbody><tr>
+                                    <td>程序版本：</td><td>v1.0.0</td>
+                                    <td>更新时间：</td><td>2016-07-31</td>
+                                    <td>程序开发：</td><td>广州云牛网络科技</td>
+                                </tr>
+                                <tr>
+                                    <td>版权所有：</td><td></td>
+                                    <td>官方授权：</td><td><a href="#">商业授权</a></td>
+                                    <td></td>
+                                   </td>
+                                </tr>
+                                </tbody></table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="callout callout-success">
+            <p> <b>欢迎登录后台管理系统</b></p>
+        </div>
+    </section>
+ </div>
+ </body>
+<script type="text/javascript">
+    // JavaScript Document
+    $(document).ready(function(){
+        $('.treeview > a').click(function(){
+            if($(this).hasClass("active")){
+                $(".treeview").each(function(){
+                    $(this).children("a").removeClass("active").next("ul").hide(300);
+                });
+            }else{
+                $(".treeview").each(function(){
+                    $(this).children("a").removeClass("active").next("ul").hide();
+                });
+                $(this).toggleClass('active').next("ul").slideToggle(300);
+            }
+
+        });
+    });
+</script>
+</html>

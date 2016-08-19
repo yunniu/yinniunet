@@ -1,0 +1,56 @@
+<aside class="main-sidebar">
+  <section class="sidebar">
+    <div class="container-fluid">
+      <!-- 侧栏菜单-->
+      <div class="sidebar" style="overflow-y:scroll;background-color:#3399cc;">
+        <ul class="nav nav-sidebar">
+          <!--网站logo-->
+          <li style="padding-top:1em;padding-bottom:1em;background-color:#fff;">
+            <a href="__MODULE__/index/index" style="padding:0;"><img src="__PUBLIC__/images/header_logo.jpg" width="100%" height="46"></a>
+          </li>
+
+          <foreach name="menu_list" item="vo" key="k" >
+            <li class="treeview">
+              <a href="javascript:void(0)">
+                <i class="fa {$vo.icon}"></i><h5>{$vo.title}</h5>
+              </a>
+              <ul class="treeview-menu">
+                <foreach name="vo.submenu" item="vv" key="kk">
+                  <li onclick="makecss(this,{$vv.mod_id})" id="menu_{$vv.mod_id}"><a href="{$vv.url}" target='rightContent'><i class="icon-circle-blank"></i></i> {$vv.title}</a></li>
+                </foreach>
+              </ul>
+            </li>
+          </foreach>
+
+          <!--&lt;!&ndash;权限管理&ndash;&gt;-->
+          <!--<li class="treeview">-->
+            <!--<a>-->
+              <!--<i class="icon-cog"></i>-->
+              <!--<h5>权限管理</h5>-->
+            <!--</a>-->
+            <!--<ul class="treeview-menu collapse" id="collapseExample">-->
+              <!--<li>-->
+                <!--<a href="__MODULE__/Admin/role" target='rightContent'>-->
+                  <!--<i class="icon-circle-blank"></i>-->
+                  <!--<span>角色管理</span>-->
+                <!--</a>-->
+              <!--</li>-->
+              <!--<li>-->
+                <!--<a href="__MODULE__/Admin/index" target='rightContent'>-->
+                  <!--<i class="icon-circle-blank"></i>-->
+                  <!--<span>管理员列表</span>-->
+                <!--</a>-->
+              <!--</li>-->
+              <!--<li>-->
+                <!--<a href="__MODULE__/Admin/log" target='rightContent'>-->
+                  <!--<i class="icon-circle-blank"></i>-->
+                  <!--<span>管理员日志</span>-->
+                <!--</a>-->
+              <!--</li>-->
+            <!--</ul>-->
+          <!--</li>-->
+        </ul>
+      </div>
+    </div>
+  </section>
+</aside>

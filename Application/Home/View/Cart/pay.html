@@ -1,0 +1,32 @@
+<include file="Public/header" title="支付" css=""/>
+<include file="Public/nav"/>
+<!--当前位置-->
+<div class="w90">
+	<div class="container-fluid">
+		<!--当前位置-->
+		<ol class="breadcrumb">
+			<span class="grey">当前位置:&nbsp;&nbsp;&nbsp;</span>
+			<li>
+				<a href="{:U('Index/index')}">首页</a>
+			</li>
+			<li>
+				<a href="#">支付</a>
+			</li>
+		</ol>
+		<!--信息填写-->
+		<div class="pay text-center">
+			<div class="cart_head"><span>&yen;</span>&nbsp;选择支付方式</div>
+			<div class="cart_content">
+				<p>一共<span>5</span>件商品&nbsp;&nbsp;合计：<span class="goods_price">&yen;5000.00</span></p>
+				<p>请通过支付宝或微信扫描下方二维码完成支付</p>
+				<div class="center-block">
+					<img src="__PUBLIC__/images/ali_code.png">
+					<img src="__PUBLIC__/images/wechat_code.png">
+				</div>
+				<p>支付完成后页面将自动跳转，<br>下一步你将需要输入联系方式与收货地址</p>
+			</div>
+			<button class="btn orange_btn" onclick="location.href='{:U('Cart/adress')}'">返回</button>			
+		</div>
+	</div>
+</div>
+<include file="Public/footer"/>

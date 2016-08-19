@@ -1,0 +1,273 @@
+<!--header-->
+<include file="Public/header" title="首页" css="__PUBLIC__/css/index.css"/>
+<!--轮播图-->
+  <include file="http://cdn.amazeui.org/amazeui/2.7.1/js/amazeui.min.js"/>
+  <include file="__PUBLIC__/lazyload-master/amazeui.lazyload.js"/>
+  <include file="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"/>
+  <include file="http://cdn.amazeui.org/amazeui/2.7.1/css/amazeui.min.css"/>
+<div class="carousel" id="ad_carousel">
+	<!--图片中部下方的切换图片的小圈-->
+	<ol class="carousel-indicators">
+		<li data-slide-to="0" data-target="#ad_carousel"></li>
+		<li data-slide-to="1" data-target="#ad_carousel"></li>
+	</ol>
+	<!--要切换的图片-->
+	<div class="carousel-inner">
+		<volist name="adList" id="adv">
+			<if condition="$i eq 1">
+				<div class="item active">
+					<img alt="ad1" src="{$adv.ad_code}" width="100%"/>
+				</div>
+			<else/>
+				<div class="item">
+					<img alt="ad1" src="{$adv.ad_code}" width="100%"/>
+				</div>
+			</if>
+		</volist>
+	</div>
+	<!--图片切换方向箭头-->
+	<a class="left carousel-control" href="#ad_carousel" data-slide="prev">
+		<span class="glyphicon glyphicon-chevron-left"></span>
+	</a>
+	<a class="right carousel-control" href="#ad_carousel" data-slide="next">
+		<span class="glyphicon glyphicon-chevron-right"></span>
+	</a>
+</div>
+
+<!--导航栏-->
+<div id="idx_nav">
+	<div class="container-fluid">
+		<div class="row text-center">
+			<volist name="categoryList" id="vo">
+				<div class="col-xs-2 <if condition='$i eq 1'>col-xs-offset-1</if>">
+					<a href="__MODULE__/goods/index/cate_id/{$vo.id}/agent_id/{$Think.session.agent_code}" data-id="{$vo.id}">
+						<img src="{$vo.image}" class="center-block img-responsive">
+						<span class="text-center">{$vo.name}</span>
+					</a>
+				</div>
+			</volist>
+		</div>
+	</div>
+</div>
+
+
+<div class="idx_goods_list">
+	<div class="w90">
+		<div class="container-fluid">
+			<!-- 今日推荐-->		
+			<div class="goods_head">
+				<div class="row">
+					<div class="col-xs-8 goods_title orange">
+						<span class="glyphicon glyphicon-stop"></span>&nbsp;今日推荐:
+					</div>
+					<div class="col-xs-4 text-right">
+						<a href="javascript:void(0)" class="grey" onclick="getMoreRecommendGoods(this)" data-value="1">更多</a>
+					</div>
+				</div>
+			</div>
+			<div class="goods_content">
+
+				<div class="row"  id="recommendGoods">
+				
+					<volist name="recommendGoodsList" id="vo" >
+					 <if condition="$i lt 5">
+						<div class="col-xs-6 col-sm-3">
+							<div class="bg_white">
+								<a href="__MODULE__/Goods/goods_detail/goods_id/{$vo.goods_id}/agent_id/{$Think.session.agent_code}"><img data-echo="{$vo.original_img}" src="__PUBLIC__/images/blank.gif" alt="Photo" ></a>
+								<div class="clearfix">
+									<span class="goods_price">&yen;{$vo.shop_price}</span>
+									<button class="btn orange_btn pull-right" onclick="addOrCancelCart(this)" data-id="{$vo.goods_id}" value="0" >
+										<span class="glyphicon glyphicon-shopping-cart"></span>加入
+									</button>
+								</div>
+								<a href="__MODULE__/Goods/goods_detail/goods_id/{$vo.goods_id}/agent_id/{$Think.session.agent_code}">{$vo.goods_name}</a>
+							</div>
+						</div>
+						</if>	
+					</volist>
+				
+				</div>
+			</div>
+			<!--热门排行-->		
+			<div class="goods_head">
+				<div class="row">
+					<div class="col-xs-8 goods_title green">
+						<span class="glyphicon glyphicon-stop"></span>热门排行:
+					</div>
+					<div class="col-xs-4 text-right">
+						<a href="javascript:void(0)" class="grey" onclick="getMoreHotGoods(this)" data-value="1">更多</a>
+					</div>
+				</div>
+			</div>
+			<div class="goods_content">
+				<div class="row" id="hotGoodsList1" >
+					<volist name="hotGoodsList" id="vo2">
+						<if condition="$i lt 9">
+							<div class="col-xs-6 col-sm-3">
+								<div class="bg_white">
+									<a href="__MODULE__/Goods/goods_detail/goods_id/{$vo2.goods_id}/agent_id/{$Think.session.agent_code}"><img data-echo="{$vo2.original_img}" alt="Photo" src="__PUBLIC__/images/blank.gif"></a>
+									<div class="clearfix">
+										<span class="goods_price">&yen;{$vo2.shop_price}</span>
+										<button class="btn orange_btn pull-right" onclick="addOrCancelCart(this)" value="0" data-id="{$vo2.goods_id}">
+											<span class="glyphicon glyphicon-shopping-cart" ></span>加入
+										</button>
+									</div>
+									<a href="__MODULE__/Goods/goods_detail/goods_id/{$vo2.goods_id}/agent_id/{$Think.session.agent_code}">{$vo2.goods_name}</a>
+								</div>
+							</div>
+						</if>
+					</volist>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<script>
+	echo.init({
+		offset: 100,
+		throttle: 250,
+		unload: false,
+		callback: function (element,op) {
+			console.log(element, 'has been', op + 'ed')
+		}
+	});
+	// echo.render(); is also available for non-scroll callbacks
+
+	function getMoreRecommendGoods(obj){
+		var $val = $(obj).data('value');
+		console.log($val);
+		if($val == 1){
+			$(obj).html('收起');
+			$(obj).data("value",0);
+		}else if($val == 0){
+			$(obj).html('更多');
+			$(obj).data("value",1);
+		}
+		$.ajax({
+			url:"__MODULE__/index/ajaxGetRecommendGoods/agent_id/{$Think.session.agent_code}",
+			dataType:"json",
+			success:function(msg){
+				//console.log(msg);
+				$('#recommendGoods').html("");
+				$.each(msg.data,function(k,v){
+					if($val == 0 && k == 4){
+						return false;
+					}
+						var str = '<div class="col-xs-6 col-sm-3"><div class="bg_white">'
+								+'<a href="__MODULE__/Goods/goods_detail/agent_id/{$Think.session.agent_code}/goods_id/'+v.goods_id+'"><img data-echo="'+v.original_img+'" alt="Photo" src="__PUBLIC__/images/blank.gif" ></a>'
+								+'<div class="clearfix">'
+								+'<span class="goods_price">&yen;'+v.shop_price+'</span>'
+								+'<button class="btn orange_btn pull-right" onclick="addOrCancelCart(this)" value="0" data-id="'+v.goods_id+'">'
+								+'<span class="glyphicon glyphicon-shopping-cart" ></span>加入</button></div>'
+								+'<a href="__MODULE__/Goods/goods_detail/agent_id/{$Think.session.agent_code}/goods_id/'+v.goods_id+'">'+v.goods_name+'</a></div></div>';
+					//console.log(v.original_img);
+				$('#recommendGoods').append(str);
+				});
+				echo.init({
+					offset: 100,
+					throttle: 250,
+					unload: false,
+					callback: function (element,op) {
+						console.log(element, 'has been', op + 'ed')
+					}
+				});
+			}
+		});
+	}
+
+	function getMoreHotGoods(obj){
+		var $val = $(obj).data('value');
+		console.log($val);
+		if($val == 1){
+			$(obj).html('收起');
+			$(obj).data("value",0);
+		}else if($val == 0){
+			$(obj).html('更多');
+			$(obj).data("value",1);
+		}
+		$.ajax({
+			url:"__MODULE__/index/ajaxGetHotGoods/agent_id/{$Think.session.agent_code}",
+			dataType:"json",
+			success:function(msg){
+				//console.log(msg);
+				$('#hotGoodsList1').html("");
+				$.each(msg.data,function(k,v){
+					if($val == 0 && k == 8){
+						return false;
+					}
+					var str = '<div class="col-xs-6 col-sm-3"><div class="bg_white">'
+								+'<a href="__MODULE__/Goods/goods_detail/agent_id/{$Think.session.agent_code}/agent_id/{$Think.session.agent_code}/goods_id/'+v.goods_id+'"><img data-echo="'+v.original_img+'" alt="Photo" src="__PUBLIC__/images/blank.gif" ></a>'
+								+'<div class="clearfix">'
+								+'<span class="goods_price">&yen;'+v.shop_price+'</span>'
+								+'<button class="btn orange_btn pull-right" onclick="addOrCancelCart(this)" value="0" data-id="'+v.goods_id+'">'
+								+'<span class="glyphicon glyphicon-shopping-cart"></span>加入</button></div>'
+								+'<a href="__MODULE__/Goods/goods_detail/agent_id/{$Think.session.agent_code}/goods_id/'+v.goods_id+'">'+v.goods_name+'</a></div></div>';
+					$('#hotGoodsList1').append(str);
+				});
+				echo.init({
+					offset: 100,
+					throttle: 250,
+					unload: false,
+					callback: function (element,op) {
+						console.log(element, 'has been', op + 'ed')
+					}
+				});
+			}
+		});
+	}
+
+	function addOrCancelCart(obj){
+		var val = $(obj).val();
+		var goods_id = $(obj).data("id");
+		console.log(goods_id);
+		if(val == 1){
+			$.ajax({
+				url:"__MODULE__/cart/delCart/agent_id/{$Think.session.agent_code}",
+				type:"get",
+				dataType:"json",
+				data:{"goods_id":goods_id},
+				success:function(msg){
+					//console.log(msg);
+					if(msg.code == 0){
+						$("#login").modal('show');
+					}else{
+						$("#cart_num").html(msg.cart_num);
+						$(obj).attr('class','btn orange_btn pull-right');
+						$(obj).html('<span class="glyphicon glyphicon-shopping-cart"></span>加入');
+						$(obj).val(0);
+					}
+				},
+				error:function(){
+					alert("网络繁忙。。。");
+				}
+			});
+		}else{
+			//通过ajax将商品添加到购物车
+			$.ajax({
+				url:"__MODULE__/cart/addToCart/agent_id/{$Think.session.agent_code}",
+				type:"get",
+				dataType:"json",
+				data:{'goods_id': goods_id},
+				success:function(msg){
+					//console.log(msg);
+					if(msg.code == 0){
+						$("#login").modal('show');
+					}else{
+						$(obj).attr('class','btn green_btn pull-right');
+						$(obj).html('<span class="glyphicon glyphicon-shopping-cart"></span>已加入');
+						$(obj).val(1);
+						$("#cart_num").html(msg.cart_num);
+					}
+				},
+				error:function(){
+					alert("网络繁忙。。。");
+				}
+			});
+		}
+	}
+</script>
+<!--footer-->
+<include file="Public/footer"/>

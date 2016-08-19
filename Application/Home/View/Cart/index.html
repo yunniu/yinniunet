@@ -1,0 +1,153 @@
+<include file="Public/header" title="购物车" css=""/>
+<include file="Public/nav"/>
+<!--当前位置-->
+<div class="w90">
+	<div class="container-fluid">
+		<!--当前位置-->
+		<ol class="breadcrumb">
+			<span class="grey">当前位置:&nbsp;&nbsp;&nbsp;</span>
+			<li>
+				<a href="{:U('Index/index')}">首页</a>
+			</li>
+			<li>
+				<a href="{:U('Cart/index')}">购物车</a>
+			</li>
+		</ol>
+		<!--购物车列表-->
+		<div class="cart text-center">
+			<div class="green cart_head">
+				<span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;&nbsp;我的购物车
+			</div>
+			<div class="cart_content container-fluid">
+				<volist name="cartList" id="vo">
+					<div class="row">
+
+						<div class="col-xs-3 col-sm-2 col-lg-2">
+							<a href="__MODULE__/goods/goods_detail/goods_id/{$vo.goods_id}/agent_id/{$Think.session.agent_code}/cart/1"><img src="{$vo.goods_img}"></a>
+						</div>
+						<div class="col-xs-4 col-sm-3 col-lg-3 text-left">
+							<div class="table_cell">
+								<a href="__MODULE__/goods/goods_detail/goods_id/{$vo.goods_id}/agent_id/{$Think.session.agent_code}/cart/1">
+								<p>{$vo.goods_name}</p>
+								价格：<span class="goods_price" >&yen;{$vo.goods_price}</span>
+								</a>
+							</div>
+						</div>
+						<div class="col-xs-5 col-sm-3 col-lg-2 col-lg-offset-1">
+							<div class="table_cell">
+								<div class="input-group">
+								<span class="input-group-btn">
+									<button class="btn" type="button" onclick="changeNum(this)">-</button>
+								</span>
+									<input type="text" class="form-control text-center" value="{$vo.goods_num}" data-id="{$vo.goods_id}" name="goods_num">
+								<span class="input-group-btn">
+									<button class="btn" type="button" onclick="changeNum(this)">+</button>
+								</span>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-5 col-sm-2 col-lg-2">
+							<span class="goods_price table_cell" id="amount_{$vo.goods_id}">&yen;{$vo.goods_amount}</span>
+						</div>
+						<div class="col-xs-5 col-sm-2 col-lg-2">
+							<div class="table_cell">
+								<button class="orange_btn btn" data-id="{$vo.goods_id}" onclick="delCart(this)">删除</button>
+							</div>
+						</div>
+					</div>
+				</volist>
+			</div>
+			<p>一共<span><if condition="$cart_num eq ''">
+				0
+				<else/>
+				{$cart_num}
+			</if></span>件商品&nbsp;&nbsp;合计：<span class="goods_price" id="cart_amount">&yen;{$cart_amount}</span></p>
+			<button class="orange_btn btn" onclick="balance()">结算</button>
+		</div>
+	</div>
+</div>
+<script>
+	function changeNum(obj){
+		var operator = $(obj).html();
+		if(operator == '-'){
+			var goods_id = $(obj).parent().next().data('id');
+			$.ajax({
+				url:"__MODULE__/cart/changeGoodsNum/agent_id/{$Think.session.agent_code}",
+				type:'post',
+				dataType:'json',
+				data:{'goods_id':goods_id,'operator':operator},
+				success:function(msg){
+					var goods_num = $(obj).parent().next().val();
+					console.log(msg);
+					var goods_num = goods_num-1;
+					console.log(goods_num);
+					if(goods_num <= 1 ){
+						goods_num = 1;
+						$(obj).parent().next().val(goods_num);
+						$("#amount_"+goods_id).html("&yen"+msg.data['amount']);
+						$("#cart_amount").html("&yen"+msg.data['all_mount']);
+					}else{
+						$(obj).parent().next().val(goods_num);
+						$("#amount_"+goods_id).html("&yen"+msg.data['amount']);
+						$("#cart_amount").html("&yen"+msg.data['all_mount']);
+					}
+				},
+				error:function(){
+					console.log("出错了");
+				}
+			});
+		}else if(operator == '+'){
+			var goods_id = $(obj).parent().prev().data('id');
+			var goods_num = $(obj).parent().prev().val();
+			$.ajax({
+				url:"__MODULE__/cart/changeGoodsNum/agent_id/{$Think.session.agent_code}",
+				type:'post',
+				dataType:'json',
+				data:{'goods_id':goods_id,'operator':operator},
+				success:function(msg){
+					$(obj).parent().prev().val(parseInt(goods_num)+1);
+					$("#amount_"+goods_id).html("&yen"+msg.data['amount']);
+					$("#cart_amount").html("&yen"+msg.data['all_mount']);
+				},
+				error:function(){
+					console.log("出错了");
+				}
+			});
+		}
+	}
+
+	function delCart(obj){
+		if(confirm("确定要删除吗？")){
+			var goods_id = $(obj).data('id');
+			console.log(goods_id);
+			$.ajax({
+				url:"__MODULE__/cart/delCart/agent_id/{$Think.session.agent_code}",
+				type:"get",
+				dataType:"json",
+				data:{"goods_id":goods_id},
+				success:function(msg){
+					//console.log(msg);
+					if(msg.code == 0){
+						alert(msg.msg);
+					}else{
+						$(obj).parent().parent().parent().remove();
+					}
+				},
+				error:function(){
+					alert("网络繁忙，请稍后重试");
+				}
+			});
+		}
+	}
+	function balance(){
+		$.ajax({
+			url:"__MODULE__/Order/balance/agent_id/{$Think.session.agent_code}",
+			dataType:'json',
+			success:function(msg){
+				console.log(msg);
+			}
+		});
+		location.href='__MODULE__/Order/address/agent_id/{$Think.session.agent_code}'
+	}
+</script>
+<include file="Public/footer"/>

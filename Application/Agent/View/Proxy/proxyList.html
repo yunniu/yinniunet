@@ -1,0 +1,71 @@
+<include file="Public/min-header"/>
+<div class="wrapper">
+  <include file="Public/breadcrumb"/>
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><i class="fa fa-list"></i> 代理列表</h3>
+        </div>
+        <div class="panel-body">    
+		<div class="navbar navbar-default">
+            <div class="row navbar-form">
+                <button type="submit" onclick="location.href='{:U('Admin/Proxy/addEditProxy')}'"  class="btn btn-primary pull-right"><i class="fa fa-plus"></i>新增代理</button>
+            </div>
+          </div>
+                        
+          <div id="ajax_return"> 
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <th class="sorting text-center">ID</th>  
+                                <th class="sorting text-center">所属分级</th>                              
+                                <th class="sorting text-center">用户名</th>
+                                <th class="sorting text-center">真实姓名</th>
+                                <th class="sorting text-center">注册时间</th>
+                                <th class="sorting text-center">手机号</th>
+                                <th class="sorting text-center">身份证号</th>
+                                <th class="sorting text-center">开通/关闭</th>
+                                <th class="sorting text-center">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <volist name="proxyList" id="list">
+                                <tr>
+                                    <td class="text-center">{$list.id}</td>
+                                    <td class="text-center">{$list.category}</td>
+                                    <td class="text-center">{$list.username}</td>
+                                    <td class="text-center">{$list.name}</td>
+                                    <td class="text-center">{$list.register|date="y-m-d",###}</td>
+                                    <td class="text-center">{$list.phone}</td>
+                                    <td class="text-center">{$list.id_card}</td>
+                                    <td class="text-center">{$list.opened}</td>
+                                    <td class="text-center">
+										                                  
+                                        <a href="{:U('Admin/Proxy/addEditProxy',array('id'=>$list['id']))}" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="编辑"><i class="fa fa-pencil"></i></a>
+                                        <a href="javascript:del_fun('{:U('Proxy/delProxy',array('id'=>$list['id']))}');" id="button-delete6" data-toggle="tooltip" title="" class="btn btn-danger" data-original-title="删除"><i class="fa fa-trash-o"></i></a>
+                                    </td>
+                                </tr>
+                            </volist>
+                            </tbody>
+                        </table>
+                    </div>
+                
+                <div class="row">
+                    <div class="col-sm-6 text-left"></div>
+                    <div class="col-sm-6 text-right">{$show}</div>
+                </div>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.row --> 
+  </section>
+  <!-- /.content --> 
+</div>
+<!-- /.content-wrapper --> 
+</body>
+</html>

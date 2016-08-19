@@ -1,0 +1,434 @@
+[ 2016-08-18T11:17:54+08:00 ] 112.94.27.93 /index.php/Admin/system/cleanCache.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000409s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000386s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000428s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000028s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000073s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004472s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004513s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000162s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000201s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000396s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000432s ]
+
+[ 2016-08-18T11:17:55+08:00 ] 112.94.27.93 /index.php/Admin/index/welcome.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000294s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000356s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000398s ]
+NOTIC: [2] file_get_contents(./Application/Admin/Conf/version.txt): failed to open stream: No such file or directory /www/web/test2/public_html/Application/Admin/Controller/IndexController.class.php 第 59 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/web/test2/public_html/Application/Admin/Controller/IndexController.class.php 第 62 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000068s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000149s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008401s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008476s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000208s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000269s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000593s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000665s ]
+
+[ 2016-08-18T11:17:57+08:00 ] 112.94.27.93 /index.php/Admin/Proxy/proxyList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000282s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000423s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000465s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000039s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000082s ]
+NOTIC: [8] Undefined variable: navigate_admin /www/web/test2/public_html/Application/Runtime/Cache/Admin/a869a7a032db86f44ae693bb4c23cdff.php 第 66 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007879s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007918s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000155s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000189s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000470s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000514s ]
+
+[ 2016-08-18T11:17:57+08:00 ] 112.94.27.93 /index.php/Admin/agent/agentList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000356s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000456s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000502s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000049s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000091s ]
+NOTIC: [8] Undefined variable: navigate_admin /www/web/test2/public_html/Application/Runtime/Cache/Admin/8b41225338c9a90faf660cd775b6b8a1.php 第 66 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008939s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008980s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000166s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000199s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000466s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000507s ]
+
+[ 2016-08-18T11:46:28+08:00 ] 112.94.27.93 /index.php/Admin/system/menu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000282s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000402s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000444s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000046s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000094s ]
+NOTIC: [8] Undefined variable: navigate_admin /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 67 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 108 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 109 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 110 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 118 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 119 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 118 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 119 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 108 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 109 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 110 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 118 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 119 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 108 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 109 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 110 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 118 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 119 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 108 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 109 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 110 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 118 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 119 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 118 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 119 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 118 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 119 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 108 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 109 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 110 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 118 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 119 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 118 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 119 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 118 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 119 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 118 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 119 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 108 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 109 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 110 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 118 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 119 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 118 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 119 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 118 行.
+NOTIC: [8] Use of undefined constant mod_id - assumed 'mod_id' /www/web/test2/public_html/Application/Runtime/Cache/Admin/1cd14831ca0a289575542efe98c11990.php 第 119 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011310s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011356s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000203s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000237s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000415s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000459s ]
+
+[ 2016-08-18T13:50:58+08:00 ] 112.94.27.93 /admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000377s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000605s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000675s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000043s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000110s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006103s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006170s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000207s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000267s ]
+
+[ 2016-08-18T13:51:00+08:00 ] 112.94.27.93 /index.php/Admin/Admin/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000340s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000505s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000547s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000032s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000072s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005293s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005332s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000149s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000182s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000414s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000462s ]
+
+[ 2016-08-18T13:51:00+08:00 ] 112.94.27.93 /index.php/Admin/Admin/vertify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000274s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000353s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000395s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000385s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000440s ]
+
+[ 2016-08-18T13:51:05+08:00 ] 112.94.27.93 /index.php/Admin/Admin/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000284s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000409s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000450s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000037s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000084s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005218s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005265s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000152s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000185s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000420s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000459s ]
+
+[ 2016-08-18T13:51:05+08:00 ] 112.94.27.93 /index.php/Admin/Admin/vertify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000275s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000387s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000475s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000410s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000466s ]
+
+[ 2016-08-18T13:51:09+08:00 ] 112.94.27.93 /index.php/Admin/Admin/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000280s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000359s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000401s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000032s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000072s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005130s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005168s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000150s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000182s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000410s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000447s ]
+
+[ 2016-08-18T13:51:09+08:00 ] 112.94.27.93 /index.php/Admin/Admin/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000303s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000427s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000469s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000033s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000071s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005059s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005097s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000150s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000182s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000406s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000442s ]
+
+[ 2016-08-18T13:51:09+08:00 ] 112.94.27.93 /index.php/Admin/Admin/vertify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000270s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000403s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000443s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000441s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000487s ]
+
+[ 2016-08-18T13:51:26+08:00 ] 112.94.27.93 /index.php?m=Admin&c=Admin&a=login&t=0.53599505031023
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000290s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000402s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000443s ]
+
+[ 2016-08-18T13:51:26+08:00 ] 112.94.27.93 /index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000310s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000377s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000419s ]
+NOTIC: [2] file_get_contents(/www/web/test2/public_html//Application/Admin/Conf/version.txt): failed to open stream: No such file or directory /www/web/test2/public_html/Application/Admin/Controller/IndexController.class.php 第 83 行.
+NOTIC: [8] Use of undefined constant INSTALL_DATE - assumed 'INSTALL_DATE' /www/web/test2/public_html/Application/Admin/Controller/IndexController.class.php 第 89 行.
+NOTIC: [8] Use of undefined constant SERIALNUMBER - assumed 'SERIALNUMBER' /www/web/test2/public_html/Application/Admin/Controller/IndexController.class.php 第 92 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000048s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000093s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007205s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007294s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000158s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000194s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000386s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000428s ]
+
+[ 2016-08-18T13:51:27+08:00 ] 112.94.27.93 /index.php/Admin/index/welcome
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000275s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000425s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000467s ]
+NOTIC: [2] file_get_contents(./Application/Admin/Conf/version.txt): failed to open stream: No such file or directory /www/web/test2/public_html/Application/Admin/Controller/IndexController.class.php 第 59 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/web/test2/public_html/Application/Admin/Controller/IndexController.class.php 第 62 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000075s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006331s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006374s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000162s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000195s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000365s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000407s ]
+
+[ 2016-08-18T14:03:04+08:00 ] 127.0.0.1 /admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-08-18T14:03:05+08:00 ] 127.0.0.1 /index.php/Admin/Admin/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-08-18T14:03:05+08:00 ] 127.0.0.1 /index.php/Admin/Admin/vertify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-08-18T14:03:15+08:00 ] 127.0.0.1 /index.php?m=Admin&c=Admin&a=login&t=0.4775023279583903
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002500s ]
+
+[ 2016-08-18T14:03:16+08:00 ] 127.0.0.1 /index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002500s ]
+NOTIC: [2] file_get_contents(C:/phpapp/wwwroot//Application/Admin/Conf/version.txt): failed to open stream: No such file or directory C:\phpapp\wwwroot\Application\Admin\Controller\IndexController.class.php 第 83 行.
+NOTIC: [8] Use of undefined constant INSTALL_DATE - assumed 'INSTALL_DATE' C:\phpapp\wwwroot\Application\Admin\Controller\IndexController.class.php 第 89 行.
+NOTIC: [8] Use of undefined constant SERIALNUMBER - assumed 'SERIALNUMBER' C:\phpapp\wwwroot\Application\Admin\Controller\IndexController.class.php 第 92 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012500s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012500s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002500s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002500s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002500s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002500s ]
+
+[ 2016-08-18T14:03:16+08:00 ] 127.0.0.1 /index.php/Admin/index/welcome
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002500s ]
+NOTIC: [2] file_get_contents(./Application/Admin/Conf/version.txt): failed to open stream: No such file or directory C:\phpapp\wwwroot\Application\Admin\Controller\IndexController.class.php 第 59 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007500s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007500s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002500s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002500s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+

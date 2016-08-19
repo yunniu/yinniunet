@@ -1,0 +1,66 @@
+<include file="Public/header" title="信息填写" css=""/>
+<include file="Public/nav"/>
+<!--当前位置-->
+<div class="w90 cart">
+	<div class="container-fluid">
+		<!--当前位置-->
+		<ol class="breadcrumb">
+			<span class="grey">当前位置:&nbsp;&nbsp;&nbsp;</span>
+			<li>
+				<a href="{:U('Index/index')}">首页</a>
+			</li>
+			<li>
+				<a href="#">收货信息</a>
+			</li>
+		</ol>
+		<!--信息填写-->
+		<div class="message text-center">
+			<div class="cart_head">信息填写</div>
+			<div class="cart_content text-left">
+				<form class="form-horizontal">
+					<div class="form-group">
+						<label for="name" class="col-sm-3 control-label">收货人：</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="name">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="phone" class="col-sm-3 control-label">手机：</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="phone">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="area" class="col-sm-3 control-label">地区：</label>
+						<div class="col-sm-9 area">
+							<div class="col-sm-4">
+								<select class="form-control">
+									<option>江苏省</option>
+								</select>
+							</div>
+							<div class="col-sm-4">
+								<select class="form-control">
+									<option>苏州市</option>
+								</select>
+							</div>
+							<div class="col-sm-4">
+								<select class="form-control">
+									<option>某某区</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="adress" class="col-sm-3 control-label">详细地址：</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="adress">
+						</div>
+					</div>
+				</form>
+			</div>
+			<button class="btn green_btn" onclick="location.href='{:U('Cart/finish')}'">完成</button>
+
+		</div>
+	</div>
+</div>
+<include file="Public/footer"/>
